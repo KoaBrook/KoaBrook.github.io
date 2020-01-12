@@ -1,12 +1,15 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{{ '/css/base.css' | url }}">
-        <title> {{ title }} </title>
-    </head>
-    <body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ '/css/base.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/flexboxgrid.min.css' | url }}">
+    <title>
+      {{ title }}
+    </title>
+  </head>
+  <body>
     <header>
       {#- Read more about `eleventy-navigation` at https://github.com/11ty/eleventy-navigation #}
       {{ collections.all | eleventyNavigation | eleventyNavigationToHtml({
@@ -16,9 +19,11 @@
         activeKey: eleventyNavigation.key
       }) | safe }}
     </header>
-    <main>
-        {{ content | safe }}
-    </main>
 
-    </body>
+    <main>
+      
+      {{ content | safe }}
+      
+    </main>
+  </body>
 </html>

@@ -1,12 +1,12 @@
 ---
 layout: layouts/base.njk
-title: Blog
-permalink: /posts/
+title: Projects
+permalink: /projects/
 eleventyNavigation:
-    key: Blog
-    order: 2
+  key: Projects
+  order: 3
 ---
-
+## Latest Posts:
 {%- assign posts = collections.post | reverse -%}
 {% for post in posts %}
 - [{{ post.data.title }}]({{ post.url }})
