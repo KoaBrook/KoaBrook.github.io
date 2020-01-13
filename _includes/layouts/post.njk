@@ -1,0 +1,13 @@
+---
+layout: layouts/base.njk
+---
+<main>
+<article>
+<div class="post-header">
+<h1>{{ title }}</h1>
+<p class="post-date">Posted: <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time></p>
+</div>
+{{ content | safe}}
+</article>
+<p class="post-back-link"><a href="/posts/">← Back to posts</a></p>
+</main>
