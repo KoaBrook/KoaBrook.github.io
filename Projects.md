@@ -7,7 +7,7 @@ eleventyNavigation:
   order: 3
 ---
 ## Latest Posts:
-{%- assign posts = collections.post | reverse -%}
+{%- assign posts = collections.posts | reverse -%}
 {% for post in posts %}
 - [{{ post.data.title }}]({{ post.url }})
 {% endfor %}

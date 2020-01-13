@@ -1,6 +1,6 @@
 {
     "tags": [
-      "post"
+      "posts"
     ],
     "layout": "layouts/base.njk"
   }

@@ -31,22 +31,77 @@ main {
     background-color: var(--bg-white)
 }
 
-ul {
+.postlist ol {
     list-style: none;
     padding: 0;
     
 }
 
-ul li a {
+.postlist ol li a {
     font-weight: 700;
     color: var(--primary-black);
 }
+
+/* #region  Postlist */
+.postlist {
+    padding: 0;
+    list-style: none;
+    margin-left: 0rem;
+}
+
+.postlist-item {
+    font-size: 1.1rem;
+    margin-right: 0.5em;
+    font-weight: 600;
+    padding-bottom: 1em;
+    font-style: italic;
+}
+
+.postlist-item a[href]:not(:hover){
+    color: var(--primary-black);
+}
+
+.postlist-item a[href]:hover {
+    border-bottom: 1px dashed var(--primary-orange);
+    color: var(--primary-orange)
+}
+
+.postlist-item-active{
+    font-weight: 700;
+    font-size: 1em;
+    color: var(--primary-orange);
+}
+
+.postlist-item-active a[href]:not(:hover){
+    font-weight: 700;
+    font-size: 1.1em;
+    color: var(--primary-orange)
+}
+
+.postlist-item-active a[href]:hover {
+    font-weight: 700;
+    font-size: 1.1em;
+    color: var(--primary-orange)
+}
+
+.postlist-date,
+.postlist-item:before {
+  font-size: 0.75em;
+  font-weight: 500;
+  color: var(--darkgray);
+  margin-left: 0rem;
+}
+
+.postlist-date {
+  word-spacing: -0.5px;
+}
+/* #endregion */
 
 /* #region  Navigation */
 .nav {
     padding: 0;
     list-style: none;
-    margin-left: 0`rem;
+    margin-left: 0rem;
 }
 
 .nav-item {
