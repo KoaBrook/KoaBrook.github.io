@@ -1,15 +1,23 @@
 ---
 layout: layouts/base.njk
-scr: js/imageload.js
 ---
-<script>{{ scr }}</script>
+
 <main>
-<article class="post">
-<div class="post-header">
-<h1>{{ title }}</h1>
-<p class="post-date">Posted: <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time></p>
-</div>
-{{ content | safe}}
-</article>
-<p class="post-back-link"><a href="/posts/">← Back to posts</a></p>
+  <article class="post">
+    <div class="post-header">
+      <h1>{{ title }}</h1>
+      {% for tag in tags %}
+        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+          <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
+      {% endfor %}
+      <p class="post-date">Posted:
+        <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+      </p>
+
+    </div>
+    {{ content | safe}}
+  </article>
+  <p class="post-back-link">
+    <a href="/posts/">← Back to posts</a>
+  </p>
 </main>
