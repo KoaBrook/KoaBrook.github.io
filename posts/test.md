@@ -1,6 +1,7 @@
 ---
 title: "This is a test post"
 date: 2020-01-20
+layout: "layouts/post.njk"
 tags:
       - test
       - noodle
@@ -9,7 +10,6 @@ tags:
       - hroodle
       - koodle
       - floodle
-      - posts
 ---
 I am testing some things here.
 
