@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/flexboxgrid.min.css">
+    <title>
+      MVP to V1: Creating my portfolio website with React and the Airtable API
+    </title>
+  </head>
+  <body>
+    <header>
+      <ul class="nav"><li class="nav-item"><a href="/">🏠</a></li>
+<li class="nav-item"><a href="/posts/">Blog</a></li>
+<li class="nav-item"><a href="/projects/">Projects</a></li>
+<li class="nav-item"><a href="/writing/">Writing</a></li></ul>
+    </header>
+
+    <script>js/imageload.js</script>
+<main>
+<article>
+<div class="post-header">
+<h1>MVP to V1: Creating my portfolio website with React and the Airtable API</h1>
+<p class="post-date">Posted: <time datetime="19-11-24">24-11-19</time></p>
+</div>
+<p>I created a personal website while on a business trip back in July 2019. It was thrown together in a couple of days using plain HTML and CSS and a pretty okay visual design. Now that I'm in the job market again and finally looking to jump into development professionally, I wanted to remake my portfolio website with a little more pizazz.</p>
+<p>I had a few requirements for this:</p>
+<ol>
+<li>I would start with an MVP and build upon it</li>
+<li>It had to be made in code, not with a website or blog builder</li>
+<li>It must be modular with the ability to add new projects with as little code as possible</li>
+<li>The website itself should contain a simple list of my projects</li>
+</ol>
+<h3>MVP</h3>
+<p>With my requirements set, I took to creating an MVP product. Since the website would be a list of my projects, the MVP was also a simple list of my projects publicly available online. I used Airtable for this. <a href="https://airtable.com/shre8qIxVeziaXfOQ/tblMvHba5g75ohHHM?blocks=hide">Check out the MVP here</a>.</p>
+<p>🖼️ <a href="https://thepracticaldev.s3.amazonaws.com/i/swvnp5986qk00g673zs7.png">Airtable MVP: Click to view image</a></p>
+<p>One of the great things about Airtable is how it automatically generates unique API documentation for every sheet and view in the base. This was the perfect springboard into the modular concept for the site, in which I wouldn't need any code to add new portfolio entries.</p>
+<h3>React web app</h3>
+<p>I enjoy coding in React. I find the modular nature of components to be intuitive. I used React previously for <a href="smashesque.com">Smashesque.com</a> and had a good time, so I went with it again. Bootstrap is my framework of choice for throwing together pretty sites so I chose to use it too.</p>
+<h3>Modular lists using Airtable</h3>
+<p>With the help of <a href="https://dev.to/taniarascia">Tania Rascia</a>'s article on <a href="https://www.taniarascia.com/using-context-api-in-react/">Using Context API in React (Hooks and Classes)</a>, I used Axios and the Airtable API to grab my view of choice and all the rows, fields and content therein from my MVP Airtable. My implementation is a little messy, but it worked, so no problem!
+I started with EntryContexts.js which performs the API call and creates a context state containing the spreadsheet object.</p>
+<pre><code class="language-javascript">    import React, { Component } from 'react'
+    import axios from 'axios'
+    export const EntryContext = React.createContext()
+    class EntryContextProvider extends Component {
+        state = {
+            entries: []
+        }
+        componentDidMount() {
+            const fetchData = () =&gt; {
+                axios
+                    .get('https://api.airtable.com/v0/appeDXIgWSt9xRB6n/
+                    Portfolio%20Entries?api_key=[MY_API_KEY]')
+                    .then(({ data }) =&gt; {
+                        this.setState({
+                            entries: data.records
+                        })
+                    })
+                    .catch(console.log)
+            }
+            fetchData();
+        }
+        render() {
+            return (
+                &lt;EntryContext.Provider value=&gt;
+                    {this.props.children}
+                &lt;/EntryContext.Provider&gt;
+            )
+        }
+    }
+    export default EntryContextProvider
+</code></pre>
+<p>Next I created a component called EntryList.js maps the EntryContextProvider component's state data into some simple HTML elements:</p>
+<pre><code class="language-javascript">import React from 'react'
+
+const ListEntry = props =&gt; {
+    const EnEntry = props.entryData.map((entry, key) =&gt; {
+
+
+        return (
+            &lt;div&gt;
+                &lt;h3&gt;{entry.fields.title}&lt;/h3&gt;
+                &lt;p&gt;{entry.fields.notes}&lt;/p&gt;
+                &lt;p&gt;&lt;a href={entry.fields.link}&gt;Link&lt;/a&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        )
+
+    })
+    return &lt;div&gt;{EnEntry}&lt;/div&gt;
+}
+
+export default ListEntry
+</code></pre>
+<p>Finally, I created a page called <code>Entries.js</code> which ties the <code>EntryContextProvider</code> and <code>ListEntry</code> components together and displays them on the page in simple React fashion. In this case, it is displayed as a list of portfolio entries on the home page of the website.</p>
+<pre><code class="language-javascript">import React, { Component } from 'react'
+import { EntryContext } from '../contexts/EntryContext'
+import ListEntry from '../components/EntryList'
+
+class Entries extends Component {
+
+    render() {
+        return (
+            &lt;EntryContext.Consumer&gt;{(context) =&gt; {
+                const { entries } = context
+                return (
+                            &lt;ListEntry entryData={entries} /&gt;
+                )
+
+            }}
+            &lt;/EntryContext.Consumer&gt;
+        )
+    }
+}
+
+export default Entries
+</code></pre>
+<p>In App.js, I wrapped my site in the EntryContextProvider component, which ensures that every page has access to the Airtable context.</p>
+<pre><code class="language-javascript">&lt;EntryContextProvider&gt;
+    &lt;Switch&gt;
+        &lt;Route exact path=&quot;/&quot; component={Entries} /&gt;
+    &lt;/Switch&gt;
+&lt;/EntryContextProvider&gt;
+</code></pre>
+<p>Finally, I had the results I wanted! A simple list of all portfolio entries that were in my Airtable spreadsheet:</p>
+<p>🖼️ <a href="https://thepracticaldev.s3.amazonaws.com/i/cybsyolz0md43i9uq9kr.PNG">Simple list: Click to view image</a></p>
+<h3>Aesthetic challenges</h3>
+<p>Many developers revel with minimal websites with lists of achievements and projects. A white colour scheme and emoji are both very popular. I enjoy being a bit contrarian and a total 90s kid, so I took inspiration from the new <a href="https://megadrivemini.sega.com/">SEGA MegaDrive Mini website</a> and tried to match its look. Unfortunately, there's a lot of history, imagery and the theme of a retro console that helps bring the 90s Spaceship look together. Without these things (and a lack of artistic talent at my disposal) the results were less than inspiring. I realised that a dark theme for my portfolio was somewhat uninviting and less friendly than I wanted it to be, so I ended up going with a light theme. I wanted to keep some semblence of character, so I kept a scrolling background grid and gave the primary container a &quot;sheet of paper&quot; look. At this point I decided to add images for each project and an emoji to identify what kind of project each is, again all contained in the spreadsheet and called with the Airtable API. I hope the emoji are intuitive to anyone viewing the portfolio but the verdict is still out on that. Once everything was styled, I was extremely happy with the outcome:</p>
+<p>🖼️ <a href="https://thepracticaldev.s3.amazonaws.com/i/vttiq9v63fwl0p0jwmva.PNG">Styled list: Click to view image</a></p>
+<h3>Final Touches</h3>
+<p>Since my website was made from scratch, I considered it an addition to my portfolio. However, I didn't want it to be added to the list with a link to itself. Therefore I added a ❔ icon in the upper-left which triggered a popover that gives more information on the site. This article will be added onto it, too:</p>
+<p>🖼️ <a href="https://thepracticaldev.s3.amazonaws.com/i/01gy48dmiozz2ke2lbrw.PNG">Popover: Click to view image</a></p>
+<p>Finally, there was a site-breaking bug to be squashed. An empty field in the spreadsheet caused the entire Airtable context to fail, causing a blank web-page. I added some very rudimentary validation to resolve this but I didn't over-think it too much since the airtable should never have empty fields if I'm managing it. At the very least, correct entries load as they should with a simple inline error if there are any problems with a field:</p>
+<p>🖼️ <a href="https://thepracticaldev.s3.amazonaws.com/i/3fc7ob76vhqp02b08vxp.PNG">Simple inline errors: Click to view image</a></p>
+<p>And that's about it for my V1 portfolio website! To add new projects I just add a row to the sheet, avoiding any code at all. Let's look at my requirements from the beginning of the project:</p>
+<ol>
+<li>I would start with an MVP and build upon it ✔</li>
+<li>It had to be made in code, not with a website or blog builder ✔</li>
+<li>It must be modular with the ability to add new projects with as little code as possible ✔</li>
+<li>The website itself should contain a simple list of my projects ✔</li>
+</ol>
+<p>As you can see, I hit all four of my requirements! It was a great journey and an interesting project. I learned the Airtable API, the importance of validation and plenty of design quirks. I'm very happy with the end result!</p>
+<h3>What's next?</h3>
+<p>I enjoy the site as it is and will most likely keep it simple for now. I may use more spreadsheets to add additional list-based sections to the site- articles, testimonials, cat photos... whatever I want to add, I can do so with very little code- Clone the <code>Entries</code>, <code>EntryContextProvider</code> and <code>ListEntry</code> components, replacing the Airtable API link and making any styling changes I want to.
+Airtable is not ideal for, say, entire blog posts but I'm actually curious about whether it could be done. Imagine an entire site with an Airtable backend? It's possible and perhaps I'll dabble in that idea in the future. For now, I'm happy to mark this V1 project complete!</p>
+<h3>BONUS</h3>
+<p>I just added a new field to the Airtable named &quot;order&quot; and a new code block. With this new snippet, I can adjust the order in which the list entries appear by adding an order value in Airtable!</p>
+<pre><code class="language-javascript">const { entries } = context
+    let sortedEntries = entries.sort(
+        function(a,b){
+            return a.fields.order - b.fields.order
+            })
+</code></pre>
+<p><a href="https://shemthedev.com/">Check out the live site here</a>
+<a href="https://airtable.com/shre8qIxVeziaXfOQ/tblMvHba5g75ohHHM?blocks=hide">Check out the Airtable backend (MVP) here</a>
+<a href="https://github.com/ShemTheDev">Check out my Github here</a></p>
+<p>I'm currently looking for work! Drop me an email at sgyll@protonmail.com if you'd like to chat.</p>
+
+</article>
+<p class="post-back-link"><a href="/posts/">← Back to posts</a></p>
+</main>
+
+
+  </body>
+</html>
