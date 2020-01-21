@@ -1,20 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="Description" content="Koa Brook's personal blog and webdev playground: Web Developer, Writer & Oneironaut">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{{ '/css/favicon.ico' | url }}" type="image/x-icon"/>
-    {% set css %}
-      {% include "base.css" %}
-    {% endset %}
-    <style>
-      {{ css | cssmin | safe }}
-    </style>
-    <title>
-      {{ title }}
-    </title>
-  </head>
+  {% include "components/head.njk" %}
   <body>
     <header>
       {#- Read more about `eleventy-navigation` at https://github.com/11ty/eleventy-navigation #}
