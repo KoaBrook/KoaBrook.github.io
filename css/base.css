@@ -10,7 +10,7 @@
   }
 
 html, body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 html {
@@ -57,22 +57,51 @@ article {
     max-width: 1000px;
 }
 
+/* #region tags */
+
+.tag {
+  background-color: var(--primary-blue);
+  font-size: 0.625rem;
+  color: #ffffff;
+  padding: 0.1rem 0.5rem;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.tag:hover{
+  background-color: var(--primary-orange);
+  font-size: 0.625rem;
+  color: #ffffff;
+}
+/* endregion */
+
 /* #region Post */
 .post-date {
 font-size: 0.75em;
 font-weight: 700;
 color: var(--darkgray);
-margin-left: 0rem;
+margin: 0rem;
+margin-top: 0.5rem;
 font-style: italic;
 }
 
 .post-header {
-    margin: 1.5rem 0;
+    margin: 1rem 0;
+    margin-bottom: 0;
+}
+
+.post-header h1 {
+  margin-bottom: 0;
 }
 
 .post-back-link {
     margin: 1.5rem 0;
     font-weight: 700;
+}
+
+.post img {
+  display: inline-flex;
+  max-width: 100%;
 }
 
 /* #endregion */
@@ -87,7 +116,7 @@ font-style: italic;
 .postlist ol {
     list-style: none;
     padding: 0;
-    
+
 }
 
 .postlist ol li a {

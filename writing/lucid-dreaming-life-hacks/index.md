@@ -1,6 +1,11 @@
 ---
 title: "Lucid Dreaming Life Hacks"
 date: 2019-11-24
+tags:
+  - Lucid Dreaming
+  - mindfulness
+  - meditation
+  - sleep
 ---
 Humans spend over 4000 hours a year sleeping unconsciously. What if there was a way to take control of the time you spend sleeping and use it to have impossible adventures and deeply beneficial healing and spiritual experiences?
 

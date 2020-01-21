@@ -1,0 +1,16 @@
+---
+permalink: /tags/
+layout: layouts/home.njk
+---
+<h3>Tags</h3>
+
+<div class="tag-list">
+{% for tag in tags %}
+  {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+  <div class="full-slant slant-meta">
+  <a href="{{ tagUrl | url }}">
+  <span class="slant-first"></span><span class="slant">{{ tag }}</span><span class="slant-after"></span>
+  </a>
+</div>
+{% endfor %}
+</div>
