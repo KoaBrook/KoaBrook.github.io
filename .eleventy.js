@@ -1,5 +1,6 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const { DateTime } = require("luxon");
+const CleanCSS = require("clean-css");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
@@ -26,8 +27,11 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.setDataDeepMerge(true);
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
-
-
   eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
+
+  eleventyConfig.addFilter("cssmin", function(code){
+    return new CleanCSS({}).minify(code).styles;
+  })
+
 
 };
