@@ -28,7 +28,7 @@ workbox.core.clientsClaim();
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "279dad33027deb00d54a77bede963dc3"
+    "revision": "01145422c1343cdcd472b23e31e8eec0"
   },
   {
     "url": "img/192.png",
@@ -68,7 +68,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "9515772f8345df7d046cebcdf45ab7c4"
+    "revision": "844e775dd21d32754700295ebfd40c76"
   },
   {
     "url": "manifest.json",
@@ -76,15 +76,15 @@ self.__precacheManifest = [
   },
   {
     "url": "posts/elevasion/index.html",
-    "revision": "ee782d779b65e7b6a38aca11004832ce"
+    "revision": "ec18686b985708ea02eba685552cb9f1"
   },
   {
     "url": "posts/future-of-web-text-centric/index.html",
-    "revision": "7f3074dca4a474b76824df1a8d6e49f8"
+    "revision": "31bf16072cc44871ad9ff79ce3ab38d7"
   },
   {
     "url": "posts/index.html",
-    "revision": "dd27fe0d82173037036962293feaa124"
+    "revision": "627b21bc82678678678a040b1054416e"
   },
   {
     "url": "posts/just-breathe/index.html",
@@ -92,159 +92,159 @@ self.__precacheManifest = [
   },
   {
     "url": "posts/mvp-to-v1/index.html",
-    "revision": "a7e74fd092ed2e9d5a81b06e5462089d"
+    "revision": "3d83639e6da3036ee78f99a9c97f2273"
   },
   {
     "url": "posts/quick-tips-kai-os/index.html",
-    "revision": "e175555437ae81e1d0b8124346c5efe3"
+    "revision": "b51383b8ce67517bf15e66759da34530"
   },
   {
     "url": "posts/taking-salary-bitcoin/index.html",
-    "revision": "5f8612f419bcc825ed5056470a1e6e88"
+    "revision": "1ef60ae89ab697df2403ea74dd4359ac"
   },
   {
     "url": "posts/test/index.html",
-    "revision": "deb00853fc88e5de2206707f3d3a617c"
+    "revision": "265b66be9ffceb7ba1b00f252dfdbdf7"
   },
   {
     "url": "posts/three-inspirational-websites/index.html",
-    "revision": "58f564c5b89e5905fcdf9980c60790ea"
+    "revision": "fb6adafcb5404c89594b0ed7e643c73d"
   },
   {
     "url": "projects/Airtable-Portfolio/index.html",
-    "revision": "3faa9b75c76702719c279ca3121065d5"
+    "revision": "88b9f236189686678b3523957cbacb04"
   },
   {
     "url": "projects/Future-Rally/index.html",
-    "revision": "b6a656e45ae3def1cbef0b04477ce070"
+    "revision": "a24271cf61b006ffe0af9684ea1cb87f"
   },
   {
     "url": "projects/index.html",
-    "revision": "8e6b3704e4bdec28a20add42d94a7964"
+    "revision": "93d8aeaced2390e29d06d1b621232845"
   },
   {
     "url": "projects/Noverantale.com/index.html",
-    "revision": "0fb82fc5c2f055d788d473b295b5f463"
+    "revision": "a2b3fe6e026fd34a383836436b91b791"
   },
   {
     "url": "projects/Sagasu/index.html",
-    "revision": "ab4970f35fbafdc958e1ea8140d1032d"
+    "revision": "9c4c0d3181d511196e1e7025e40ea562"
   },
   {
     "url": "projects/Smashesque/index.html",
-    "revision": "a2b68f3e2084fe660b39f8c681f8d1d6"
+    "revision": "e3cdbd3e20d1c9aeff01390164bb5a03"
   },
   {
     "url": "tags/Airtable/index.html",
-    "revision": "8d3d2726f73806f644c14ce215a1c227"
+    "revision": "97e4377f3aeafd113cf2017c39904089"
   },
   {
     "url": "tags/bitcoin/index.html",
-    "revision": "ccd59d17908c40455a042a8767fe3df6"
+    "revision": "483c5526e95d258a8e5c8bbaa81262f2"
   },
   {
     "url": "tags/boodle/index.html",
-    "revision": "5abeffcc066325c96bb56d0723d1d073"
+    "revision": "eb7c3729de04f59509ff334466f3b466"
   },
   {
     "url": "tags/careers/index.html",
-    "revision": "66246ea90e5e01659bda185f13b0fb39"
+    "revision": "32b49b685d7b596956e362441798bfce"
   },
   {
     "url": "tags/crypto/index.html",
-    "revision": "1bc67dfe835c6172a814b92baaa325ca"
+    "revision": "1a6df7cf3a980ee9f01799192ee9b205"
   },
   {
     "url": "tags/design/index.html",
-    "revision": "352c463b91a28782feab4ed3561a4bd7"
+    "revision": "2ccbb28d1254e3d5a6d7e5316fb69014"
   },
   {
     "url": "tags/doodle/index.html",
-    "revision": "93c0d910a6adff60c3860d8465c02df7"
+    "revision": "5c2c5b7a6a747a2c95dc47d1121ec4fa"
   },
   {
     "url": "tags/floodle/index.html",
-    "revision": "784f258d3cdc76d8f74c68610ee5bbdb"
+    "revision": "09b0ccc6461a92d83a36ce44f97ecae4"
   },
   {
     "url": "tags/game maker/index.html",
-    "revision": "a0c17931216cf61f916bf9e76f6886ec"
+    "revision": "7b7682ba04f9f2dfdf9bce29d3f34d5d"
   },
   {
     "url": "tags/gamedev/index.html",
-    "revision": "0be2a05c86681512f78d2071c56a7372"
+    "revision": "3383619eaa27eaf68621fa6adf523ee6"
   },
   {
     "url": "tags/hroodle/index.html",
-    "revision": "c9e16b81c5fa184c99747aac31c0bc5f"
+    "revision": "fe5cfea053c13cbd0e408bb5fcbfef2f"
   },
   {
     "url": "tags/index.html",
-    "revision": "a9373528c875a48a748c571f2d15e5a7"
+    "revision": "2142ab75abdace7200193c84de8b1b0b"
   },
   {
     "url": "tags/KaiOS/index.html",
-    "revision": "19973a6c4021a46f925deae26bcd45fe"
+    "revision": "8e698927b0d6ef810dbbba244ee20611"
   },
   {
     "url": "tags/koodle/index.html",
-    "revision": "96a7ba9b6b51fcaa2558c128a848aace"
+    "revision": "f8f2844f821c6b6d5d047e66350ca2de"
   },
   {
     "url": "tags/Lucid Dreaming/index.html",
-    "revision": "57a1903711a885a180984aef7067f485"
+    "revision": "2669fa2b4c12a0ef60b7213e69e38e5f"
   },
   {
     "url": "tags/meditation/index.html",
-    "revision": "5a17a6ed7232056914d0d9cd4a422ebe"
+    "revision": "f1b9d3aec884d48ab2f9281869811eb6"
   },
   {
     "url": "tags/mindfulness/index.html",
-    "revision": "9467a3e613ce4f0ea46fdf456fc436d9"
+    "revision": "64ea7f556c598c0422cc863ede3ae1aa"
   },
   {
     "url": "tags/noodle/index.html",
-    "revision": "403b76b4c2b8cc3ee3a208dd32f0fff9"
+    "revision": "9f6b148aad09bc7809ce5731b490bdd4"
   },
   {
     "url": "tags/projects/index.html",
-    "revision": "00ec7503b65e59b9611823d633a8ee82"
+    "revision": "b02b814c576fbae9f40f0140e48f5147"
   },
   {
     "url": "tags/react/index.html",
-    "revision": "d8ce18e1a481e225f0fe920db0b894ff"
+    "revision": "e266a197898fbb189838b997e0534204"
   },
   {
     "url": "tags/scope/index.html",
-    "revision": "db9f1db98370e5cf479d008774b5ee26"
+    "revision": "d05280753b2570f5a9fa43e600414def"
   },
   {
     "url": "tags/sleep/index.html",
-    "revision": "efab06284b5114735efb406cbc935a10"
+    "revision": "1cbcd1bd9037c73d8d268f6a0309ab79"
   },
   {
     "url": "tags/test/index.html",
-    "revision": "b4972b1bd88245c81d6249e9ca552587"
+    "revision": "181cac4c0e20536483f13b61b25140a1"
   },
   {
     "url": "tags/webapp/index.html",
-    "revision": "c9f0f842e954e10c34bd739946f3492f"
+    "revision": "bb441127f6890734e5d201cf1e543d9f"
   },
   {
     "url": "tags/webdev/index.html",
-    "revision": "5d98db5d268f692a8dea3459c2deac49"
+    "revision": "253564e0923619329c2fbdeb8a834c53"
   },
   {
     "url": "tags/writing/index.html",
-    "revision": "e5638563c5d0ed1a57b36a9a50bc35f8"
+    "revision": "cf287a3ad5731a80ada0d6c81e79fa7b"
   },
   {
     "url": "writing/index.html",
-    "revision": "266edbda73d2777e202b89c3a3c0b50f"
+    "revision": "42495feb4f67108e3e089350ff619c79"
   },
   {
     "url": "writing/lucid-dreaming-life-hacks/index.html",
-    "revision": "070d261ddd5c741ecc70a773b1080a9c"
+    "revision": "d60140f476485843628ecb72fd366d86"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
