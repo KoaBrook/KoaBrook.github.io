@@ -26,7 +26,7 @@
     "eleventy-plugin-pwa": "^1.0.8",
     "jquery": "^3.4.1",
     "luxon": "^1.12.0",
-    "markdown-it": "^8.4.2",
+    "markdown-it": "^12.3.2",
     "markdown-it-anchor": "^5.0.2"
   },
   "dependencies": {
